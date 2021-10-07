@@ -1,0 +1,39 @@
+.header{
+
+    background-color: #14279B;
+    .item-menu{
+        font-size: 14px;
+        font-weight: 700;
+        color: white;
+        background-color: #3D56B2;
+        border-radius: 0.3rem;
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+    .item-menu:hover{
+        background-color: #4a5ea7;
+    }
+    nav{
+        width: 50%;
+        display: flex;
+        justify-content: space-between;
+    }
+    .logo{
+        height: 2.5rem;
+        width: 2.5rem;
+        display: table-column;
+        align-items: center;
+
+        img{
+            box-shadow: white ;
+        }
+
+        .title{
+            font-size: 10px;
+            font-weight: bold;
+            color: white;
+            display: block;
+            width: 100px;
+        }
+    }
+}

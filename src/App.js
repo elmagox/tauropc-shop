@@ -4,7 +4,7 @@ import { ItemListContainer } from './containers/ItemListContainer/ItemListContai
 
 function App() {
   return (
-    <div className="App">
+    <div className="">
       <NavBar/>
       <ItemListContainer greeting="Saludos desde ItemListContainer"/>
     </div>

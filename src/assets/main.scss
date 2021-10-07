@@ -1,3 +1,48 @@
+@import-normalize;
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;700&display=swap');
+
+body{
+  font-family: 'Open Sans', sans-serif;
+  margin: 0;
+  background-color: #E6E6E6;
+}
+
+.container {
+  width: 100%;
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+} 
+
+@media (min-width: 576px) {
+  .container {
+      width: 540px;
+  }
+}
+
+@media (min-width: 768px) {
+  .container {
+      width: 720px;
+  }
+}
+
+@media (min-width: 992px) {
+  .container {
+      width: 960px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .container {
+      width: 1140px;
+  }
+}
+
+
 $sizes:  0px, 0.25rem, 0.5rem, 0.75rem, 1rem, 1.25rem, 1.5rem, 1.75rem, 2rem, 2.25rem, 2.5rem;
 
 
@@ -6,4 +51,8 @@ $sizes:  0px, 0.25rem, 0.5rem, 0.75rem, 1rem, 1.25rem, 1.5rem, 1.75rem, 2rem, 2.
   .p-#{$i}{
     padding: $size;
   };
+  .m-#{$i}{
+    margin: $size;
+  };
+  
 }

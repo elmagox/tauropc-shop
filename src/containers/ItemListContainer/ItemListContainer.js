@@ -1,54 +1,11 @@
 import React, { useEffect, useState } from "react";
+import { ItemList } from "../../components/ItemList/ItemList";
+import { pedirProductos } from "../../helpers/pedirProductos";
 
-const stock =[
-    {
-        id: 1,
-        name: `Producto `,
-        description: "Lorem ipsum",
-        price:1500,
-        img: "https://via.placeholder.com/220"
-    },
-    {
-        id: 2,
-        name: `Producto `,
-        description: "Lorem ipsum",
-        price:1500,
-        img: "https://via.placeholder.com/220"
-    },
-    {
-        id: 3,
-        name: `Producto `,
-        description: "Lorem ipsum",
-        price:1500,
-        img: "https://via.placeholder.com/220"
-    },
-    {
-        id: 4,
-        name: `Producto `,
-        description: "Lorem ipsum",
-        price:1500,
-        img: "https://via.placeholder.com/220"
-    },
-    {
-        id: 5,
-        name: `Producto `,
-        description: "Lorem ipsum",
-        price:1500,
-        img: "https://via.placeholder.com/220"
-    }
-]
-
-export const ItemListContainer = ({greeting}) =>{
+export const ItemListContainer = () =>{
     const [items, setItems] = useState([])    
-    const [loading, setLoading]= useState(false)
+    const [loading, setLoading]= useState(false) 
     
-    const pedirProductos = () =>{
-        return new Promise((resolve, reject)=>{
-            setTimeout(()=>{
-                resolve(stock)
-            }, 2000)
-        })
-    }
 
     useEffect(() =>{
         setLoading(true)
@@ -64,17 +21,14 @@ export const ItemListContainer = ({greeting}) =>{
     }, [])
 
     return (
-        <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            {
-                loading ? 
-                <h2>Cargando...</h2>:
-                items.map(item => 
-                    <>
-                        <h1>{item.name}</h1>
-                        <h1>{item.description}</h1>
-                    </>
-                )
-            }
+        <section class=" m-5">
+            <div className="container">
+                {
+                    loading 
+                    ? <h2>Cargando...</h2>
+                    : <ItemList items = {items}/>              
+                }
+            </div>
         </section>
     )
 }
