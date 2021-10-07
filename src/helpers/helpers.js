@@ -7,3 +7,7 @@ export const pedirProductos = () =>{
         }, 2000)
     })
 }
+
+export const currencyFormatter = (number) =>{
+    return new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD' }).format(number)
+}

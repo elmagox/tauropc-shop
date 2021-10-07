@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { ItemList } from "../../components/ItemList/ItemList";
-import { pedirProductos } from "../../helpers/pedirProductos";
+import { pedirProductos } from "../../helpers/helpers";
 
 export const ItemListContainer = () =>{
     const [items, setItems] = useState([])    
