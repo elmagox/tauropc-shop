@@ -4,7 +4,7 @@
 body{
   font-family: 'Open Sans', sans-serif;
   margin: 0;
-  background-color: #E6E6E6;
+  background-color: #ffffff;
 }
 
 .container {
@@ -54,5 +54,23 @@ $sizes:  0px, 0.25rem, 0.5rem, 0.75rem, 1rem, 1.25rem, 1.5rem, 1.75rem, 2rem, 2.
   .m-#{$i}{
     margin: $size;
   };
+  
+}
+
+.card-title {
+  display: block;
+  -webkit-box-orient: vertical;
+  display: -webkit-box;
+  max-width: 100%;
+  box-sizing: border-box;
+  line-height: 1.375;
+  word-wrap: break-word;
+  word-break: break-word;
+  text-overflow: ellipsis;
+  text-decoration: none;
+  overflow: hidden;
+  max-height: 2.8em;
+  -webkit-line-clamp: 2;
+  font-weight: 800;
   
 }

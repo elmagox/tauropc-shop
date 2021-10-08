@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { ItemList } from "../../components/ItemList/ItemList";
+import { ItemSkeletor } from "../../components/ItemList/ItemSkeletor";
 import { pedirProductos } from "../../helpers/helpers";
 
 export const ItemListContainer = () =>{
@@ -21,11 +22,11 @@ export const ItemListContainer = () =>{
     }, [])
 
     return (
-        <section class=" m-5">
+        <section class="m-5">
             <div className="container">
                 {
-                    loading 
-                    ? <h2>Cargando...</h2>
+                    loading                    
+                    ? <ItemSkeletor/>
                     : <ItemList items = {items}/>              
                 }
             </div>
