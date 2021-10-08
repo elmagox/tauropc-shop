@@ -6,10 +6,9 @@ export const ItemSkeletor = (props) => (
     {Array(6)
         .fill()
         .map((item, index) => (
-
-          <div className="card p-4" key={index}>
+          <div className="card p-6" key={index}>
             <p className="card-title">
-              <Skeleton height={32} width={`100%`} />
+              <Skeleton height={36} width={`100%`} />
             </p>
             <h3>
               <Skeleton height={32} width={`40%`} />
