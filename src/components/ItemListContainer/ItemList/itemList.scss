@@ -8,4 +8,8 @@
     align-items: flex-start;
     scroll-behavior: smooth;
     scroll-snap-align: none;
+    a{
+        text-decoration: none;
+        color: rgba(32, 32, 32, 1);
+    }
 }

@@ -1,0 +1,20 @@
+body{
+    background-color: blueviolet;
+}
+.card-title {
+    display: block;
+    -webkit-box-orient: vertical;
+    display: -webkit-box;
+    max-width: 100%;
+    box-sizing: border-box;
+    line-height: 1.375;
+    word-wrap: break-word;
+    word-break: break-word;
+    text-overflow: ellipsis;
+    text-decoration: none;
+    overflow: hidden;
+    max-height: 2.8em;
+    -webkit-line-clamp: 2;
+    font-weight: 800;
+    
+  }

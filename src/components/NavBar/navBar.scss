@@ -1,5 +1,4 @@
 .header{
-
     background-color: #14279B;
     .item-menu{
         font-size: 14px;
@@ -18,22 +17,25 @@
         display: flex;
         justify-content: space-between;
     }
-    .logo{
-        height: 2.5rem;
-        width: 2.5rem;
-        display: table-column;
-        align-items: center;
+    a{
+        text-decoration: none;
+        .logo{
+            height: 2.5rem;
+            width: 2.5rem;
+            display: table-column;
+            align-items: center;
+            
+            img{
+                box-shadow: white ;
+            }
 
-        img{
-            box-shadow: white ;
-        }
-
-        .title{
-            font-size: 10px;
-            font-weight: bold;
-            color: white;
-            display: block;
-            width: 100px;
+            .title{
+                font-size: 10px;
+                font-weight: bold;
+                color: white;
+                display: block;
+                width: 100px;
+            }
         }
     }
 }

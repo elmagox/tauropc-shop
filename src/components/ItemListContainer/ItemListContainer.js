@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from "react";
-import { ItemList } from "../../components/ItemList/ItemList";
-import { ItemSkeletor } from "../../components/ItemList/ItemSkeletor";
+import { ItemList } from "./ItemList/ItemList"
+import { ItemSkeletor } from "./ItemSkeletor/ItemSkeletor"; 
 import { pedirProductos } from "../../helpers/helpers";
 
 export const ItemListContainer = () =>{
     const [items, setItems] = useState([])    
-    const [loading, setLoading]= useState(false) 
+    const [loading, setLoading] = useState(false) 
     
 
     useEffect(() =>{
@@ -22,12 +22,12 @@ export const ItemListContainer = () =>{
     }, [])
 
     return (
-        <section class="m-5">
+        <section className="m-5">
             <div className="container">
                 {
                     loading                    
                     ? <ItemSkeletor/>
-                    : <ItemList items = {items}/>              
+                    : <ItemList items={items}/>              
                 }
             </div>
         </section>
