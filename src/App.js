@@ -2,7 +2,7 @@ import React from 'react';
 import { BrowserRouter, Switch, Route, Redirect } from 'react-router-dom';
 import { NavBar } from './components/NavBar/NavBar';
 import { ItemListContainer } from './components/ItemListContainer/ItemListContainer'; 
-import { ItemDetail } from './components/ItemListContainer/ItemDetail/ItemDetail'; 
+import { ItemDetailContainer } from './components/ItemDetailContainer/ItemDetailContainer';
 import './assets/main.scss';
 
 function App() {
@@ -13,11 +13,11 @@ function App() {
           <Route exact path="/">
             <ItemListContainer/>
           </Route>
-          <Route exact path="/category/:id">
-            <h1>category</h1>
+          <Route exact path="/category/:categoryId">
+            <ItemListContainer/>
           </Route>
-          <Route exact path="/item/:id">
-            <ItemDetail/>
+          <Route exact path="/item/:itemId">
+            <ItemDetailContainer/>
           </Route>
           <Route  path="*">
             <Redirect to="/"/>

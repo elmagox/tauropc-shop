@@ -1,44 +1,41 @@
 import React, { useEffect, useState } from "react";
-import { ItemList } from "./ItemList/ItemList"
-import { ItemSkeletor } from "./ItemSkeletor/ItemSkeletor"; 
 import { pedirProductos } from "../../helpers/helpers";
 import { useParams } from "react-router";
+import { ItemDetail } from "./ItemDetail/ItemDetail";
+import { ItemDetailSkeletor } from './ItemDetailSkeletor/ItemDetailSkeletor'
 
 
-export const ItemListContainer = () =>{
-    const [items, setItems] = useState([])    
+
+export const ItemDetailContainer = () =>{
+    const [item, setItem] = useState([])    
     const [loading, setLoading] = useState(false) 
-    
-    const {categoryId} = useParams()
+    const { itemId } = useParams()
 
     useEffect(() =>{
         setLoading(true)
         pedirProductos()
         .then((res)=>{ 
-            if(categoryId){
-                setItems(res.filter(prod=>prod.category === categoryId))
+            if(itemId){
+                setItem(res.find(prod => prod.id === Number(itemId)))
             }else{
-                setItems(res)
+                console.log("Error")
             }            
         })
         .catch((error)=>console.log(error))
         .finally(()=>{            
             setLoading(false)
-            console.log("Fin del llamado")
         })
-    }, [categoryId])
+    }, [itemId])
 
     return (
         <section className="m-5">
             <div className="container">
                 {
                     loading                    
-                    ? <ItemSkeletor/>
-                    : <ItemList items={items}/>              
+                    ? <ItemDetailSkeletor/>
+                    : <ItemDetail {...item}/>              
                 }
             </div>
         </section>
     )
 }
-
-

@@ -7,11 +7,10 @@ import './item.scss'
 
 export const Item =({id, name, description, img, price}) =>{
     return(
-        <Link to={`item/${id}`}>
+        <Link to={`/item/${id}`}>
             <div key={id} className="card p-6">
                 <p className="card-title">{name}</p>
                 <h3>{currencyFormatter(price)}</h3>
-                <p>{description}</p>
                 <img src={`/products/${img}`} alt={name}/>
             </div>
         </Link>   

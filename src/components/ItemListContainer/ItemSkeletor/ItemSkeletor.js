@@ -1,5 +1,6 @@
 import React from "react"
 import Skeleton from "react-loading-skeleton"
+import '../Item/item.scss'
 
 export const ItemSkeletor = (props) => (
     <div className="items-list">
