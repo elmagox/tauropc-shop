@@ -22,19 +22,15 @@
         .logo{
             height: 2.5rem;
             width: 2.5rem;
-            display: table-column;
             align-items: center;
-            
-            img{
-                box-shadow: white ;
-            }
-
+            margin: 0;
             .title{
                 font-size: 10px;
                 font-weight: bold;
                 color: white;
                 display: block;
                 width: 100px;
+                margin-top: -8px;
             }
         }
     }
