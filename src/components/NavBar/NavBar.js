@@ -19,7 +19,9 @@ export const NavBar = () =>{
                 <Link to="/category/network" className="item-menu p-3">Networking</Link>
                 <Link to="/category/electric" className="item-menu p-3">Electric</Link>
                 <Link to="/category/computersystem" className="item-menu p-3">Computers Systems</Link>
-                <CartWidget/>
+                <Link to="/cart">
+                    <CartWidget/>
+                </Link>
             </div>
         </nav>      
     )

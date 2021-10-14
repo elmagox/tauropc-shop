@@ -16,15 +16,16 @@ export const ItemDetail = ({name, price, img, description, category}) =>{
                     <div className="product-info-group">
                         <p className="product-ship-info">{description}</p>
                         <Link className="product-category" to={`/category/${category}`}>
-                            {category}
+                           Category: {category}
                         </Link>
-                        <h1>{currencyFormatter(price)}</h1>
+                        <h1>Price: {currencyFormatter(price)}</h1>
+                        <button className="btn btn-buy">ADD TO CART</button>
                         
                     </div>                    
                 </div>
             </div>
             
-            <button className="btn btn-default" onClick={ () => goBack()}>Atras</button>
+            <button className="btn btn-default" onClick={ () => goBack()}>BACK</button>
         </div>
     )
 }

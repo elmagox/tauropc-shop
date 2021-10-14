@@ -4,6 +4,7 @@ import { NavBar } from './components/NavBar/NavBar';
 import { ItemListContainer } from './components/ItemListContainer/ItemListContainer'; 
 import { ItemDetailContainer } from './components/ItemDetailContainer/ItemDetailContainer';
 import './assets/main.scss';
+import { CartContainer } from './components/CartContainer/CartContainer';
 
 function App() {
   return (
@@ -18,6 +19,9 @@ function App() {
           </Route>
           <Route exact path="/item/:itemId">
             <ItemDetailContainer/>
+          </Route>
+          <Route exact path="/cart">
+            <CartContainer/>
           </Route>
           <Route  path="*">
             <Redirect to="/"/>

@@ -6,6 +6,10 @@ body{
   background-color: #ffffff;
 }
 
+::-webkit-scrollbar {
+  display: none;
+}
+
 .container {
   width: 100%;
   margin-right: auto;
@@ -73,24 +77,30 @@ $sizes:  0px, 0.25rem, 0.5rem, 0.75rem, 1rem, 1.25rem, 1.5rem, 1.75rem, 2rem, 2.
 
 .btn{
   display: inline-block;
-  font-weight: 400;
   text-align: center;
   white-space: nowrap;
   vertical-align: middle;
   user-select: none;
   border: 1px solid transparent;
-  padding: .350rem .75rem;
-  font-size: 1rem;
+  padding: 6px 1em;
+  font-size: 12px;
   line-height: 1.5;
   border-radius: .25rem;
-  transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+  transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out;
   cursor: pointer;
+  font-weight: 700;
+}
+
+.btn-buy{
+    background-color: #cc4b00;
+    color: #fff;
+    border: 1px solid #c60;
 }
 
 .btn-default{
-    color: #fff;
-    background-color: #343a40;
-    border-color: #343a40;
+  background-color: #242424;
+  color: #fff;
+  border: 1px solid rgb(34, 34, 34);
 }
 
 .display-flex {
