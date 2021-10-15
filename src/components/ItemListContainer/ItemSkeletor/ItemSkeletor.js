@@ -4,7 +4,7 @@ import '../Item/item.scss'
 
 export const ItemSkeletor = (props) => (
     <div className="items-list">
-    {Array(6)
+    {Array(12)
         .fill()
         .map((item, index) => (
           <div className="card p-6" key={index}>

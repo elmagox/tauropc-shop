@@ -2,13 +2,13 @@
 
 ECommerce creado para venta de computadores, componentes, gaming, network y mas... usando [Create React App](https://github.com/facebook/create-react-app) para el curso de React en CoderHouse.
 
-## Rutas de Categorias
+## Rutas de categorias
 
 La aplicacion permite filtrar los productos segun su categoria, ademas se puede acceder al detalle de cada uno.
 
 ## Navegabilidad
 
-![image info](https://github.com/elmagox/tauropc-shop/blob/main/public/navegabilidad.gif)
+![image](./public/navegabilidad.gif)
 
 ## Dependencias y herramientas
 - sass:
