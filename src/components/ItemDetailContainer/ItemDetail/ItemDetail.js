@@ -16,7 +16,7 @@ export const ItemDetail = ({name, price, img, description, category}) =>{
                     <div className="product-info-group">
                         <p className="product-ship-info">{description}</p>
                         <Link className="product-category" to={`/category/${category}`}>
-                           Category: {category}
+                           category: {category}
                         </Link>
                         <h1>Price: {currencyFormatter(price)}</h1>
                         <button className="btn btn-buy">ADD TO CART</button>
