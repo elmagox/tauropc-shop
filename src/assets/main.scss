@@ -54,6 +54,19 @@ $sizes:  0px, 0.25rem, 0.5rem, 0.75rem, 1rem, 1.25rem, 1.5rem, 1.75rem, 2rem, 2.
   .m-#{$i}{
     margin: $size;
   };
+
+  .mt-#{$i}{
+    margin-top: $size;
+  };
+
+  .ml-#{$i}{
+    margin-left: $size;
+  };
+
+  .mr-#{$i}{
+    margin-right: $size;
+  };
+
   
 }
 
@@ -91,6 +104,11 @@ $sizes:  0px, 0.25rem, 0.5rem, 0.75rem, 1rem, 1.25rem, 1.5rem, 1.75rem, 2rem, 2.
   font-weight: 700;
 }
 
+.btn-mini {
+  outline: none;
+  border: 1px solid #d9d9d9;
+}
+
 .btn-buy{
     background-color: #cc4b00;
     color: #fff;
@@ -99,6 +117,17 @@ $sizes:  0px, 0.25rem, 0.5rem, 0.75rem, 1rem, 1.25rem, 1.5rem, 1.75rem, 2rem, 2.
 
 .btn-default{
   background-color: #242424;
+  color: #fff;
+  border: 1px solid rgb(34, 34, 34);
+}
+
+.btn-tertiary{
+  border-color: #a9a9a9;
+  background: #e6e6e6;
+}
+
+.btn-danger{
+  background-color: rgba(255, 0, 0, 0.822);
   color: #fff;
   border: 1px solid rgb(34, 34, 34);
 }

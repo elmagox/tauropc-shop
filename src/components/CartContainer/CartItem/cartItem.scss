@@ -1,0 +1,27 @@
+.item-container{
+    display: flex;
+    align-items: center;
+    .item-img{
+        padding: 0.5rem;
+        width: calc((100% - 60px)/5);
+        max-width: 200px;
+    }
+    
+    .item-info{
+        padding: 0.5rem;
+        width: calc((100% - 20px)/2);
+        max-width: 600px;
+    }
+    .item-qty{
+        text-align: center;
+        padding: 0.5rem;
+        font-weight: 700;
+        width: calc((100% - 20px)/2);
+        max-width: 50px;
+    }
+    .item-subtotal{
+        padding: 1.2rem;
+        font-weight: 700;
+    }
+}
+

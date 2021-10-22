@@ -1,13 +1,14 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { ItemList } from "./ItemList/ItemList"
 import { ItemSkeletor } from "./ItemSkeletor/ItemSkeletor"; 
 import { pedirProductos } from "../../helpers/helpers";
+import { UIContext } from "../../context/UIContext"
 import { useParams } from "react-router";
 
 
 export const ItemListContainer = () =>{
     const [items, setItems] = useState([])    
-    const [loading, setLoading] = useState(false) 
+    const {loading, setLoading} = useContext(UIContext) 
     
     const {categoryId} = useParams()
 

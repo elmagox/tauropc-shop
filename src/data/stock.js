@@ -5,7 +5,8 @@ export const stock =[
         description: "DEEPCOOL MATREXX 50 ADD-RGB 4F Mid-Tower Case 4x120mm ADD-RGB Fans, Full-size Tempered Glass Side And Front Panel.",
         price:1500,
         img: "1.jpg",
-        category: "component"
+        category: "component",
+        stock: 12
     },
     {
         id: 2,
@@ -13,7 +14,8 @@ export const stock =[
         description: "DEEPCOOL MATREXX 50 ADD-RGB 4F Mid-Tower Case 4x120mm ADD-RGB Fans, Full-size Tempered Glass Side And Front Panel.",
         price:1300,
         img: "2.jpg",
-        category: "component"
+        category: "component",
+        stock: 12
     },
     {
         id: 3,
@@ -21,7 +23,8 @@ export const stock =[
         description: "DEEPCOOL MATREXX 50 ADD-RGB 4F Mid-Tower Case 4x120mm ADD-RGB Fans, Full-size Tempered Glass Side And Front Panel.",
         price:10500,
         img: "3.jpg",
-        category: "gaming"
+        category: "gaming",
+        stock: 12
     },
     {
         id: 4,
@@ -29,7 +32,8 @@ export const stock =[
         description: "DEEPCOOL MATREXX 50 ADD-RGB 4F Mid-Tower Case 4x120mm ADD-RGB Fans, Full-size Tempered Glass Side And Front Panel.",
         price:500,
         img: "4.jpg",
-        category: "component"
+        category: "component",
+        stock: 12
     },
     {
         id: 5,
@@ -37,7 +41,8 @@ export const stock =[
         description: "DEEPCOOL MATREXX 50 ADD-RGB 4F Mid-Tower Case 4x120mm ADD-RGB Fans, Full-size Tempered Glass Side And Front Panel.",
         price:1700,
         img: "5.jpg",
-        category: "gaming"
+        category: "gaming",
+        stock: 12
     },
     {
         id: 6,
@@ -45,7 +50,8 @@ export const stock =[
         description: "DEEPCOOL MATREXX 50 ADD-RGB 4F Mid-Tower Case 4x120mm ADD-RGB Fans, Full-size Tempered Glass Side And Front Panel.",
         price:3750,
         img: "6.jpg",
-        category: "gaming"
+        category: "gaming",
+        stock: 12
     },
     {
         id: 7,
@@ -53,7 +59,8 @@ export const stock =[
         description: "This patented technology analyzes the speaker’s entire electro-acoustic and mechanical system for improved material selection and more efficient geometry.",
         price:3990,
         img: "7.jpg",
-        category: "electric"
+        category: "electric",
+        stock: 12
     },
     {
         id: 8,
@@ -61,7 +68,8 @@ export const stock =[
         description: "Sony Industry Leading Noise Canceling.",
         price:4990,
         img: "8.jpg",
-        category: "electric"
+        category: "electric",
+        stock: 12
     },
     {
         id: 9,
@@ -69,7 +77,8 @@ export const stock =[
         description: "Super-small long-throw mid-bass drivers with Dynamic Balance technology.",
         price:5990,
         img: "9.jpg",
-        category: "electric"
+        category: "electric",
+        stock: 12
     },
     {
         id: 10,
@@ -77,7 +86,8 @@ export const stock =[
         description: "Over Ear Wireless Bluetooth Headphones, 60H Playtime, USB-C Fast Charging, High Bass, AUX Input, Foldable and Comfortable For Travel.",
         price:3550,
         img: "10.jpg",
-        category: "network"
+        category: "network",
+        stock: 12
     },
     {
         id: 11,
@@ -85,7 +95,8 @@ export const stock =[
         description: "In addition to numerous analog and digital AV connectors, the AVR-S540BT features a USB port on the front panel for convenient audio playback. It’s compatible with a wide range of portable USB devices and supports MP3, WMA, FLAC and MPEG-4/AAC tracks. Whether you want to listen to your latest MP3 download or soak in the fidelity of audiophile-quality FLAC recordings, you have quick access to your favorite songs.",
         price:13850,
         img: "11.jpg",
-        category: "network"
+        category: "network",
+        stock: 12
     },
     {
         id: 12,
@@ -93,7 +104,8 @@ export const stock =[
         description: "In addition to numerous analog and digital AV connectors, the AVR-S540BT features a USB port on the front panel for convenient audio playback. It’s compatible with a wide range of portable USB devices and supports MP3, WMA, FLAC and MPEG-4/AAC tracks. Whether you want to listen to your latest MP3 download or soak in the fidelity of audiophile-quality FLAC recordings, you have quick access to your favorite songs.",
         price:4550,
         img: "12.jpg",
-        category: "network"
+        category: "network",
+        stock: 12
     },
     {
         id: 13,
@@ -101,7 +113,8 @@ export const stock =[
         description: "DEEPCOOL MATREXX 50 ADD-RGB 4F Mid-Tower Case 4x120mm ADD-RGB Fans, Full-size Tempered Glass Side And Front Panel.",
         price:4550,
         img: "13.jpg",
-        category: "computersystem"
+        category: "computersystem",
+        stock: 12
     },
     {
         id: 14,
@@ -109,7 +122,8 @@ export const stock =[
         description: "Intel i9-10900, RTX 3060 Ti, 32GB DDR4 RAM, 1TB NVMe, Windows 10 Pro 64-bit.",
         price:4550,
         img: "14.png",
-        category: "computersystem"
+        category: "computersystem",
+        stock: 12
     },
     {
         id: 15,
@@ -117,7 +131,8 @@ export const stock =[
         description: "Intel i9-10900, RTX 3060 Ti, 32GB DDR4 RAM, 1TB NVMe, Windows 10 Pro 64-bit.",
         price:14550,
         img: "15.png",
-        category: "computersystem"
+        category: "computersystem",
+        stock: 12
     }
 
     

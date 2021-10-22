@@ -1,10 +1,31 @@
-import React from "react";
+import React, {useState, useContext} from "react";
 import { useHistory } from "react-router";
 import { Link } from "react-router-dom";
+import { CartContext } from "../../../context/CartContext";
 import { currencyFormatter } from "../../../helpers/helpers"; 
+import { ItemCount } from "../../ItemCount/ItemCount";
 import './itemDetail.scss'
-export const ItemDetail = ({name, price, img, description, category}) =>{
+export const ItemDetail = ({id, name, price, img, description, category, stock}) =>{
     const { goBack } = useHistory()
+    const { addToCart, removeItemCart, isInCart } = useContext(CartContext)
+    const [ cantidad, setCantidad ] = useState(0)
+
+    const handleAdd = ()=>{
+        const newItem = {
+            id,
+            name,
+            price,
+            img,
+            description,
+            category,
+            cantidad,
+            stock
+        }
+        if(cantidad > 0){
+            addToCart(newItem)            
+        }
+    }
+
     return (
         <div className="panel">   
             <div className="display-flex">      
@@ -19,8 +40,18 @@ export const ItemDetail = ({name, price, img, description, category}) =>{
                            category: {category}
                         </Link>
                         <h1>Price: {currencyFormatter(price)}</h1>
-                        <button className="btn btn-buy">ADD TO CART</button>
-                        
+                        { 
+                            isInCart(id) 
+                            ? <><br/><Link to="/cart" className="btn btn-default">SEE IN CART</Link></>
+                            : 
+                            <>
+                                <ItemCount cantidad={cantidad} modify={setCantidad} max={stock}/>
+                                <br/>
+                                <button className="btn btn-buy mt-4 mr-4" onClick={handleAdd}>ADD TO CART</button>
+                                <button className="btn btn-default mt-4" onClick={()=>removeItemCart(id)}>REMOVE TO CART</button>  
+                            </>
+                        }                       
+                                              
                     </div>                    
                 </div>
             </div>

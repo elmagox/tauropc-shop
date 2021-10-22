@@ -1,5 +1,14 @@
-.cart{
-    height: 2.1rem;
-    width: 2.1rem;
-    color: white;    
+.cart-widget{
+    text-align: center;
+    .cart{
+        height: 2.1rem;
+        width: 2.1rem;
+        color: white;    
+    }
+    .count{
+        font-size: 12px;
+        font-weight: 700;
+        float: none;
+        color: white;
+    }
 }

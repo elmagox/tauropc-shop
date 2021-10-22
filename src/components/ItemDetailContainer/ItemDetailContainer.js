@@ -1,14 +1,15 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useContext } from "react";
 import { pedirProductos } from "../../helpers/helpers";
 import { useParams } from "react-router";
 import { ItemDetail } from "./ItemDetail/ItemDetail";
 import { ItemDetailSkeletor } from './ItemDetailSkeletor/ItemDetailSkeletor'
+import { UIContext } from "../../context/UIContext"
 
 
 
 export const ItemDetailContainer = () =>{
     const [item, setItem] = useState([])    
-    const [loading, setLoading] = useState(false) 
+    const {loading, setLoading} = useContext(UIContext) 
     const { itemId } = useParams()
 
     useEffect(() =>{
