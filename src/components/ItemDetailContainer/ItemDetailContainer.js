@@ -9,9 +9,8 @@ import { UIContext } from "../../context/UIContext"
 
 export const ItemDetailContainer = () =>{
     const [item, setItem] = useState([])    
-    const {loading, setLoading} = useContext(UIContext) 
+    const { loading, setLoading } = useContext(UIContext) 
     const { itemId } = useParams()
-
     useEffect(() =>{
         setLoading(true)
         pedirProductos()
@@ -26,7 +25,7 @@ export const ItemDetailContainer = () =>{
         .finally(()=>{            
             setLoading(false)
         })
-    }, [itemId])
+    }, [itemId, setLoading])
 
     return (
         <section className="m-5">

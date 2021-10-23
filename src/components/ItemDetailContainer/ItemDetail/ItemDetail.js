@@ -42,7 +42,7 @@ export const ItemDetail = ({id, name, price, img, description, category, stock})
                         <h1>Price: {currencyFormatter(price)}</h1>
                         { 
                             isInCart(id) 
-                            ? <><br/><Link to="/cart" className="btn btn-default">SEE IN CART</Link></>
+                            ? <><br/><Link to="/cart" className="btn btn-default">VIEW THE CART</Link></>
                             : 
                             <>
                                 <ItemCount cantidad={cantidad} modify={setCantidad} max={stock}/>

@@ -1,8 +1,8 @@
 import React, { useContext } from "react";
-
 import './cartItem.scss'
 import { currencyFormatter } from '../../../helpers/helpers'
 import { CartContext } from "../../../context/CartContext";
+import { Link } from "react-router-dom";
 
 export const CartItem = ({id, name, price, img, cantidad}) =>{
 
@@ -15,7 +15,9 @@ export const CartItem = ({id, name, price, img, cantidad}) =>{
                     <img src={`/products/${img}`} alt={name} height="150"/> 
                 </div>
                 <div className="item-info">
-                    <p className="card-title">{name}</p>
+                    <p className="card-title">
+                        <Link to={`/item/${id}`}>{name}</Link>
+                    </p>
                                  
                 </div>
                 <div className="item-qty">

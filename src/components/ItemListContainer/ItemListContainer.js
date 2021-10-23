@@ -27,7 +27,8 @@ export const ItemListContainer = () =>{
             setLoading(false)
             console.log("Fin del llamado")
         })
-    }, [categoryId])
+        
+    }, [categoryId, setLoading])
 
     return (
         <section className="m-5">

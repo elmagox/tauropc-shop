@@ -2,9 +2,9 @@
 
 ECommerce creado para venta de computadores, componentes, gaming, network y mas... usando [Create React App](https://github.com/facebook/create-react-app) para el curso de React en CoderHouse.
 
-## Rutas de categorias
+## Rutas y funcionalidad
 
-La aplicacion permite filtrar los productos segun su categoria, ademas se puede acceder al detalle de cada uno.
+La aplicacion permite filtrar los productos segun su categoria, ademas se puede acceder al detalle de cada uno, agregar o eliminar al carrito, control de stock y gestion de productos agregados.
 
 ## Navegabilidad
 

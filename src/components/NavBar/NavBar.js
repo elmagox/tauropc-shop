@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import logo from '../../assets/skull.svg'
 import { CartWidget } from "../CartWidget/CartWidget";
 import './navBar.scss'
@@ -14,14 +14,14 @@ export const NavBar = () =>{
                         <span className="title">Tauro PC</span>
                     </div>
                 </Link>                         
-                <Link to="/category/component" className="item-menu p-3">Components</Link>
-                <Link to="/category/gaming" className="item-menu p-3">Gaming</Link>
-                <Link to="/category/network" className="item-menu p-3">Networking</Link>
-                <Link to="/category/electric" className="item-menu p-3">Electric</Link>
-                <Link to="/category/computersystem" className="item-menu p-3">Computers Systems</Link>
+                <NavLink activeClassName="active" to="/category/component" className="item-menu p-3">Components</NavLink >
+                <NavLink activeClassName="active" to="/category/gaming" className="item-menu p-3">Gaming</NavLink >
+                <NavLink activeClassName="active" to="/category/network" className="item-menu p-3">Networking</NavLink >
+                <NavLink activeClassName="active" to="/category/electric" className="item-menu p-3">Electric</NavLink >
+                <NavLink activeClassName="active" to="/category/computersystem" className="item-menu p-3">Computers Systems</NavLink >
                 <Link to="/cart">
                     <CartWidget/>
-                </Link>
+                </Link >
             </div>
         </nav>      
     )

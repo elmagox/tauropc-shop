@@ -3,11 +3,11 @@ import { BrowserRouter, Switch, Route, Redirect } from 'react-router-dom';
 import { NavBar } from './components/NavBar/NavBar';
 import { ItemListContainer } from './components/ItemListContainer/ItemListContainer'; 
 import { ItemDetailContainer } from './components/ItemDetailContainer/ItemDetailContainer';
-import './assets/main.scss';
 import { CartContainer } from './components/CartContainer/CartContainer';
 import { CartProvider } from './context/CartContext'
 import { UIProvider } from './context/UIContext';
 
+import './assets/main.scss';
 
 
 function App() {
@@ -30,7 +30,7 @@ function App() {
                 <ItemDetailContainer/>
               </Route>
               <Route exact path="/cart">
-                <CartContainer/>
+                <CartContainer />
               </Route>
               <Route  path="*">
                 <Redirect to="/"/>
