@@ -14,9 +14,12 @@ export const ItemDetailSkeletor = (props) => (
             </h1>
             <div className="product-info-group">
                 <p className="product-ship-info">
-                <Skeleton height={36} width={`100%`} />
+                  <Skeleton height={72} width={`100%`} />
                 </p>
-                <Skeleton height={36} width={`20%`} />
+                <Skeleton height={24} width={`20%`} />
+                <p>
+                <Skeleton height={36} width={`40%`} />
+                </p>
             </div>                    
         </div>
     </div>
