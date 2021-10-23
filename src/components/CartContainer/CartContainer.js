@@ -17,7 +17,7 @@ export const CartContainer = () =>{
                 <hr/>  
                 <CartList carrito={carrito}/>            
                 <hr/>
-                <h3>{currencyFormatter(calcTotalValue())}</h3>
+                <h3>{ currencyFormatter(calcTotalValue()) }</h3>
                 <button className="btn btn-default" onClick={emptyCart}>
                     CLEAN CART
                 </button>

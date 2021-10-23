@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 
 export const CartItem = ({id, name, price, img, cantidad}) =>{
 
-    const {removeItemCart} = useContext(CartContext)
+    const {removeItemCart, updateQty} = useContext(CartContext)
 
     return(
         <>
@@ -21,7 +21,7 @@ export const CartItem = ({id, name, price, img, cantidad}) =>{
                                  
                 </div>
                 <div className="item-qty">
-                    { cantidad }
+                    <input value={cantidad} onChange={(e)=> updateQty(id, e.target.value)} className="form-control"/>    
                 </div>
                 <div className="item-subtotal">
                     {currencyFormatter(price * cantidad)}
