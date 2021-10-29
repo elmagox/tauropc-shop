@@ -1,9 +1,9 @@
 import React, { useContext, useEffect, useState } from "react";
 import { ItemList } from "./ItemList/ItemList"
 import { ItemSkeletor } from "./ItemSkeletor/ItemSkeletor"; 
-import { pedirProductos } from "../../helpers/helpers";
 import { UIContext } from "../../context/UIContext"
 import { useParams } from "react-router";
+import { getFirestore } from "../../firebase/config";
 
 
 export const ItemListContainer = () =>{
@@ -13,20 +13,25 @@ export const ItemListContainer = () =>{
     const {categoryId} = useParams()
 
     useEffect(() =>{
+        
         setLoading(true)
-        pedirProductos()
-        .then((res)=>{ 
-            if(categoryId){
-                setItems(res.filter(prod=>prod.category === categoryId))
-            }else{
-                setItems(res)
-            }            
+        const db = getFirestore()
+        const products = !categoryId 
+        ? db.collection("products")
+        : db.collection("products").where('category', '==', categoryId)
+
+        products.get()
+        .then((res) => {
+            const newItems = 
+            res.docs.map((doc) => {
+                return {id: doc.id, ...doc.data()}
+            })
+            setItems(newItems)
         })
         .catch((error)=>console.log(error))
-        .finally(()=>{            
+        .finally(()=>{
             setLoading(false)
-            console.log("Fin del llamado")
-        })
+        })    
         
     }, [categoryId, setLoading])
 

@@ -4,7 +4,9 @@ import './cartWidget.scss'
 export const CartWidget = ()=>{
     const { calcAmount } = useContext(CartContext)
     return (
-        <div className="cart-widget">
+        <div className="cart-widget" style={{
+            visibility: calcAmount() === 0 ? 'hidden' : 'visible'
+        }}>
             <span className="count">{calcAmount()}</span>
             <div type="button" className="cart">
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">

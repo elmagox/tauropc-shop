@@ -8,7 +8,7 @@ import './itemDetail.scss'
 export const ItemDetail = ({id, name, price, img, description, category, stock}) =>{
     const { goBack } = useHistory()
     const { addToCart, removeItemCart, isInCart } = useContext(CartContext)
-    const [ cantidad, setCantidad ] = useState(0)
+    const [ cantidad, setCantidad ] = useState(1)
 
     const handleAdd = ()=>{
         const newItem = {

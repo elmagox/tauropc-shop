@@ -1,9 +1,9 @@
 import React, { useEffect, useState, useContext } from "react";
-import { pedirProductos } from "../../helpers/helpers";
 import { useParams } from "react-router";
 import { ItemDetail } from "./ItemDetail/ItemDetail";
 import { ItemDetailSkeletor } from './ItemDetailSkeletor/ItemDetailSkeletor'
 import { UIContext } from "../../context/UIContext"
+import { getFirestore } from "../../firebase/config";
 
 
 
@@ -13,18 +13,23 @@ export const ItemDetailContainer = () =>{
     const { itemId } = useParams()
     useEffect(() =>{
         setLoading(true)
-        pedirProductos()
-        .then((res)=>{ 
-            if(itemId){
-                setItem(res.find(prod => prod.id === Number(itemId)))
-            }else{
-                console.log("Error")
-            }            
+        const db = getFirestore()
+        const products = db.collection("products")
+        const item = products.doc(itemId) 
+
+        item.get()
+        .then((doc) => {
+            setItem({
+                id: doc.id,
+                ...doc.data()
+            })
         })
-        .catch((error)=>console.log(error))
-        .finally(()=>{            
+        .catch(err => console.log(err))
+        .finally(()=>{
             setLoading(false)
         })
+
+        
     }, [itemId, setLoading])
 
     return (

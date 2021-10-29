@@ -3,7 +3,7 @@ import React from "react";
 export const ItemCount = ({cantidad, modify, max}) => {
 
     const handleSubtract = () => {
-        if(cantidad > 0){
+        if(cantidad > 1){
             modify(cantidad - 1)
         }
     }

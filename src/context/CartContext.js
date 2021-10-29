@@ -32,7 +32,7 @@ export const CartProvider = ({children}) => {
     const updateQty = (itemId, newValue) =>{
       const values = [...carrito]
       var index = values.findIndex(obj => obj.id === itemId);
-      if(values[index].cantidad <= values[index].stock){
+      if(newValue <= values[index].stock){
         values[index].cantidad = Number(newValue)
       }else{
         values[index].cantidad = Number(values[index].stock)
