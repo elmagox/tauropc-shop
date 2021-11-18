@@ -2,7 +2,8 @@ import React, { useContext } from "react";
 import { CartContext } from "../../context/CartContext"
 import { CartList } from "./CartList/CartList";
 import { currencyFormatter } from "../../helpers/helpers"
-import { Redirect } from "react-router";
+import { Redirect} from "react-router";
+import { Link } from "react-router-dom";
 
 export const CartContainer = () =>{
 
@@ -23,6 +24,7 @@ export const CartContainer = () =>{
                 <button className="btn btn-default" onClick={emptyCart}>
                     CLEAN CART
                 </button>
+                <Link to="/checkout" className="btn btn-default ml-4">CHECKOUT</Link>
             </>
             }
         </div>

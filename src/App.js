@@ -6,6 +6,7 @@ import { ItemDetailContainer } from './components/ItemDetailContainer/ItemDetail
 import { CartContainer } from './components/CartContainer/CartContainer';
 import { CartProvider } from './context/CartContext'
 import { UIProvider } from './context/UIContext';
+import { Checkout } from './components/Checkout/Checkout'
 
 import './assets/main.scss';
 
@@ -32,9 +33,12 @@ function App() {
               <Route exact path="/cart">
                 <CartContainer />
               </Route>
+              <Route exact path="/checkout">
+                <Checkout/>
+              </Route>
               <Route  path="*">
                 <Redirect to="/"/>
-              </Route>
+              </Route>              
             </Switch>
         </BrowserRouter>
       </CartProvider>
