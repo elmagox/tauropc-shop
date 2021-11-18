@@ -1,9 +1,11 @@
-import { getFirestore } from '../../firebase/config'
+import { getFirestore } from './config'
 import firebase from 'firebase'
 import 'firebase/firestore'
 
-export const purchaseOrder = async (values,carrito, total){
-    const orden = {
+export const purchaseOrder = (values, carrito, total) => {
+
+    return new Promise( async (resolve, reject) => {
+        const orden = {
             buyer: {
                 ...values
             },
@@ -12,7 +14,7 @@ export const purchaseOrder = async (values,carrito, total){
             date: firebase.firestore.Timestamp.fromDate(new Date())
         }
 
-         const db = getFirestore()
+        const db = getFirestore()
         const orders = db.collection('orders')
 
         const itemsToUpdate = db.collection('products')
@@ -21,6 +23,7 @@ export const purchaseOrder = async (values,carrito, total){
 
         const query = await itemsToUpdate.get()
         const batch = db.batch()
+
         const outOfStock = []
         query.docs.forEach(doc => {
             const itemInCart = carrito.find(prod => prod.id === doc.id)
@@ -32,26 +35,18 @@ export const purchaseOrder = async (values,carrito, total){
         });
 
         if(outOfStock.length === 0){
-            setLoading(true)
             orders.add(orden)
                 .then(( res )=> {
                     batch.commit()
-                    alert.success(
-                    <div>{['The purchase was successful with the order ', <b>${res.id}</b>]}</div>,
-                    {
-                        timeout: 0,
-                        onClose: () => {
-                            emptyCart()
-                        }
-                    })
+                    resolve(res.id)
                 })
                 .catch((err) => {
-                    console.log(err)
-                })
-                .finally(() => {
-                    setLoading(false)
-                })            
-        }else{
-            alert.error(`Product out stock ${outOfStock.map(el => el.name).join(', ')}`)
+                   reject(err)
+                })          
+        } else {
+            reject(outOfStock)
         }
+    })
+
+    
 }

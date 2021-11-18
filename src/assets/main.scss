@@ -1,5 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;700&display=swap');
 
+
+
 body{
   font-family: 'Open Sans', sans-serif;
   margin: 0;
@@ -44,8 +46,30 @@ body{
 
 
 $sizes:  0px, 0.25rem, 0.5rem, 0.75rem, 1rem, 1.25rem, 1.5rem, 1.75rem, 2rem, 2.25rem, 2.5rem;
+[class*="col-"] {
+  padding-right: 0;
+  padding-left: 0;
+  float: Left;
+}
+.col-6 {
+  width: 49%;
+  margin-right: 0.5%;
+  margin-left: 0.5%;
+}
 
-
+.grid {
+  position: relative;
+  max-width: 1272px;
+  width: 99%;
+  margin: 0.5% auto;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+.grid:after {
+  content: "";
+  display: table;
+  clear: both;
+}
 @for $i from 1 through length($sizes) {
   $size: nth($sizes, $i);
   .p-#{$i}{
@@ -88,6 +112,7 @@ $sizes:  0px, 0.25rem, 0.5rem, 0.75rem, 1rem, 1.25rem, 1.5rem, 1.75rem, 2rem, 2.
 }
 
 .btn{
+  text-transform: uppercase;
   display: inline-block;
   text-align: center;
   text-decoration: none;
@@ -142,4 +167,25 @@ $sizes:  0px, 0.25rem, 0.5rem, 0.75rem, 1rem, 1.25rem, 1.5rem, 1.75rem, 2rem, 2.
 .form-control{
   width: 100%;
   text-align: center;
+}
+
+.form-input {
+  display: block;
+  width: 92%;
+  padding: 0.3rem 0.7rem;
+  font-size: 1rem;
+  line-height: 1.5;
+  color: #495057;
+  background-color: #fff;
+  background-clip: padding-box;
+  border: 1px solid #ced4da;
+}
+
+label {
+  display: inline-block;
+}
+
+.form-label {  
+  margin-top: 0.7rem;
+  margin-bottom: 0.4rem;
 }
