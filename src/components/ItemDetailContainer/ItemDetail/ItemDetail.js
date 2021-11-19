@@ -5,7 +5,8 @@ import { CartContext } from "../../../context/CartContext";
 import { currencyFormatter } from "../../../helpers/helpers"; 
 import { ItemCount } from "../../ItemCount/ItemCount";
 import './itemDetail.scss'
-export const ItemDetail = ({id, name, price, img, description, category, stock}) =>{
+export const ItemDetail = ({id, name, price, img, description, category, stock}, itemExist=false) =>{
+    console.log(itemExist)
     const { goBack } = useHistory()
     const { addToCart, removeItemCart, isInCart } = useContext(CartContext)
     const [ cantidad, setCantidad ] = useState(1)
@@ -25,13 +26,13 @@ export const ItemDetail = ({id, name, price, img, description, category, stock})
             addToCart(newItem)            
         }
     }
-
+    console.log("aqui", itemExist)
     return (
         <div className="panel">   
             <div className="display-flex">
-                {typeof name === 'undefined' 
-                ? <h1>Product is not found.</h1>  
-                : <>
+                {
+                itemExist ?                
+                <>
                     <div className="product-gallery">
                         <img src={`/products/${img}`} alt={name}/>
                     </div>
@@ -58,7 +59,8 @@ export const ItemDetail = ({id, name, price, img, description, category, stock})
                         </div>                    
                     </div>
                   </>
-             }
+                  : <h1>This product was not found.</h1>
+                }
             </div>
             
             <button className="btn btn-default" onClick={ () => goBack()}>BACK</button>

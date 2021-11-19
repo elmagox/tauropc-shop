@@ -9,20 +9,21 @@ import { getFirestore } from "../../firebase/config";
 
 export const ItemDetailContainer = () =>{
     const [item, setItem] = useState([])    
-    const { loading, setLoading } = useContext(UIContext) 
+    const [itemExist, setItemExist] = useState(false)    
+    const { loading, setLoading } = useContext(UIContext)
     const { itemId } = useParams()
     useEffect(() =>{
         setLoading(true)
         const db = getFirestore()
         const products = db.collection("products")
         const item = products.doc(itemId) 
-
         item.get()
         .then((doc) => {
+            setItemExist(doc.exists)
             setItem({
                 id: doc.id,
                 ...doc.data()
-            })
+            })            
         })
         .catch(err => console.log(err))
         .finally(()=>{
@@ -30,15 +31,14 @@ export const ItemDetailContainer = () =>{
         })
 
         
-    }, [itemId, setLoading])
-
+    }, [itemId, setLoading, setItemExist])
     return (
         <section className="m-5">
             <div className="container">
-                {
+                {                
                     loading                    
                     ? <ItemDetailSkeletor/>
-                    : <ItemDetail {...item}/>              
+                    : <ItemDetail {...item} item={{itemExist}} />              
                 }
             </div>
         </section>
