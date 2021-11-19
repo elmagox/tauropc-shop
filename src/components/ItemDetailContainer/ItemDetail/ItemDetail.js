@@ -5,8 +5,8 @@ import { CartContext } from "../../../context/CartContext";
 import { currencyFormatter } from "../../../helpers/helpers"; 
 import { ItemCount } from "../../ItemCount/ItemCount";
 import './itemDetail.scss'
-export const ItemDetail = ({id, name, price, img, description, category, stock}, itemExist=false) =>{
-    console.log(itemExist)
+
+export const ItemDetail = ({id, name, price, img, description, category, stock, itemExist}) =>{
     const { goBack } = useHistory()
     const { addToCart, removeItemCart, isInCart } = useContext(CartContext)
     const [ cantidad, setCantidad ] = useState(1)
@@ -26,7 +26,7 @@ export const ItemDetail = ({id, name, price, img, description, category, stock},
             addToCart(newItem)            
         }
     }
-    console.log("aqui", itemExist)
+    
     return (
         <div className="panel">   
             <div className="display-flex">

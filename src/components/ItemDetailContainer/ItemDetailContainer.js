@@ -38,7 +38,7 @@ export const ItemDetailContainer = () =>{
                 {                
                     loading                    
                     ? <ItemDetailSkeletor/>
-                    : <ItemDetail {...item} item={{itemExist}} />              
+                    : <ItemDetail {...item} itemExist={itemExist} />              
                 }
             </div>
         </section>
