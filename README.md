@@ -11,7 +11,7 @@ La aplicacion permite filtrar los productos segun su categoria, ademas se puede 
 
 ## Navegabilidad
 
-![image](./public/navegabilidad.gif)
+![image](./public/navigation_tauro.gif)
 
 ## Dependencias y herramientas
 - firebase:
@@ -20,6 +20,8 @@ La aplicacion permite filtrar los productos segun su categoria, ademas se puede 
     - Se reemplaza LibSass por Dart Sass para optener las ultimas mejoras al usar archivos .scss
 - react-loading-skeleton:
     - Herramienta para crear componentes tipo skeletor que mejoran la experiencia de usuario en la carga de los productos tanto para el listado como para el detalle.
+- react-alert:
+    - Herramienta para las notificaciones de eventos y alert dentro de la aplicacion.
 
 ## Otros recursos
 - [LibSass is Deprecated](https://sass-lang.com/blog/libsass-is-deprecated)
