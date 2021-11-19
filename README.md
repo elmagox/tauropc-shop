@@ -3,7 +3,7 @@
 ECommerce creado para venta de computadores, componentes, gaming, network y mas... usando [Create React App](https://github.com/facebook/create-react-app) para el curso de React en CoderHouse.
 
 ## Demo
-[Tauro PC en Netlify](https://competent-golick-bb61b3.netlify.app)
+[Tauro PC en Netlify](https://zen-morse-4ed0df.netlify.app)
 
 ## Rutas y funcionalidad
 
@@ -14,6 +14,8 @@ La aplicacion permite filtrar los productos segun su categoria, ademas se puede 
 ![image](./public/navegabilidad.gif)
 
 ## Dependencias y herramientas
+- firebase:
+    - Conexion a base de datos firebase.
 - sass:
     - Se reemplaza LibSass por Dart Sass para optener las ultimas mejoras al usar archivos .scss
 - react-loading-skeleton:
