@@ -30,7 +30,7 @@ export const ItemDetail = ({id, name, price, img, description, category, stock})
         <div className="panel">   
             <div className="display-flex">
                 {typeof name === 'undefined' 
-                ? <h1>Product with id: {id} is not found.</h1>  
+                ? <h1>Product is not found.</h1>  
                 : <>
                     <div className="product-gallery">
                         <img src={`/products/${img}`} alt={name}/>
