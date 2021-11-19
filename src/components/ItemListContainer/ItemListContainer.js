@@ -17,7 +17,7 @@ export const ItemListContainer = () =>{
         setLoading(true)
         const db = getFirestore()
         const products = !categoryId 
-        ? db.collection("products")
+        ? db.collection("products").where('stock', '!=', 0)
         : db.collection("products").where('category', '==', categoryId)
 
         products.get()

@@ -14,8 +14,9 @@ export const FormCheckout = () => {
         name: '',
         lastname: '',
         email: '',
+        confirm_email: '',
         tel: '',
-        address: ''      
+        address: ''   
     })
 
     const [loading, setLoading] = useState(false)
@@ -39,7 +40,7 @@ export const FormCheckout = () => {
             alert.show("Error in field lastname")
             return
         }
-        if(values.email.length < 3){
+        if(values.email.length < 3 || values.email !== values.confirm_email){
             alert.show("Error in field email")
             return
         }
@@ -47,7 +48,7 @@ export const FormCheckout = () => {
             alert.show("Error in field telephone")
             return
         }
-        if(values.address.length < 3){
+        if(values.email.length < 3 ){
             alert.show("Error in field address")
             return
         }
@@ -55,7 +56,8 @@ export const FormCheckout = () => {
         setLoading(true)
         purchaseOrder(values, carrito, calcTotalValue())
         .then((res) => {
-            alert.show(res, {
+            alert.show(`The order was sent successfully with the following confirmation number: ${res}`, {                
+                timeout: 13000,
                 onClose: ()=>{
                     emptyCart()
                 }
@@ -85,7 +87,7 @@ export const FormCheckout = () => {
                     />
                 </div>
                 
-                <div class="col-6">
+                <div className="col-6">
                 <label className="form-label">Lastname</label>
                 <input
                     className="form-input"
@@ -97,7 +99,7 @@ export const FormCheckout = () => {
                 />
                 </div>
                 
-                <div class="col-6">
+                <div className="col-6">
                 <label className="form-label">Email</label>
                 <input
                     className="form-input"
@@ -108,8 +110,22 @@ export const FormCheckout = () => {
                     onChange={handleInputChange}
                 />
                 </div>
+
+                <div className="col-6">
+                <label className="form-label">Confirm email</label>
+                <input
+                    className="form-input"
+                    type="text"
+                    placeholder="Email"
+                    name="confirm_email"
+                    value={values.confirm_email}
+                    onChange={handleInputChange}
+                />
+                { values.confirm_email !== values.email && <small>Please confirm the email.</small>}
+                </div>
                 
-                <div class="col-6">
+                
+                <div className="col-6">
                 <label className="form-label">Telephone</label>
                 <input
                     className="form-input"
@@ -122,12 +138,12 @@ export const FormCheckout = () => {
                 </div>
                 
 
-                <div class="col-6">
+                <div className="col-6">
                 <label className="form-label">Shipping address</label>
                 <input
                     className="form-input"
                     type="text"
-                    placeholder="Telephone"
+                    placeholder="Shipping address"
                     name="address"
                     value={values.address}
                     onChange={handleInputChange}
@@ -136,7 +152,7 @@ export const FormCheckout = () => {
                 
             </div>
             <div className="grid">
-                <div class="col-6">
+                <div className="col-6">
                     <button type="submit" className="btn btn-default mt-4" disabled={loading}>{ !loading ? 'Finish order':'Orden in progress...'}</button>
                 </div>
             </div>           
